@@ -1,0 +1,296 @@
+Intel Core architecture:
+
+                 -------Mobile------- ----Desktop/UP Server---- CL Server     DP Server      MP Server
+   -------------------------------------------------------------------------------------------------------
+   1-core 65nm   Merom-L              Conroe-L
+   1-core 45nm   Penryn-L                                       Wolfdale-CL
+   2-core 65nm   Merom-2M  Merom      Allendale     Conroe      Conroe-CL     Woodcrest      Tigerton-DC
+   2-core 45nm   Merom-3M  Penryn     Wolfdale-3M   Wolfdale    Wolfdale-CL   Wolfdale-DP
+   4-core 65nm                                      Kentsfield                Clovertown     Tigerton
+   4-core 45nm             Penryn-QC  Yorkfield-6M  Yorkfield   Yorkfield-CL  Harpertown     Dunnington-QC
+   6-core 34nm                                                                               Dunnington
+
+Intel Nehalem architecture (sometimes called 1st generation):
+
+                              Desktop/
+                 Mobile       UP Server   DP Server      MP Server
+   -----------------------------------------------------------------
+   8-core  45nm                                          Beckton
+   4-core  45nm               Bloomfield  Gainestown
+   4-core  45nm  Clarksfield  Lynnfield   Jasper Forest
+   -----------------------------------------------------------------
+   12-core 32nm                                          Westmere-EX
+   6-core  32nm               Gulftown    Westmere-EP
+   2-core  32nm  Arrandale    Clarkdale
+
+Intel *Bridge, *well, *Lake, *Cove:
+
+                                                                                        ======================Server (Xeon)======================
+      Marketing   uArch          Relationships                                          uArch                   Platform         Socket
+   ----------------------------------------------------------------------------------------------------------------------------------------------
+    2000 Series : Sandy Bridge : new architecture                                       (same)                                   LGA 2011: R
+    3000 Series : Ivy Bridge   : die shrink of Sandy Bridge (22nm)                                                               LGA 2011: R
+   ----------------------------------------------------------------------------------------------------------------------------------------------
+    4000 Series : Haswell      : new architecture                                       (same)                  Grantley         LGA 2011-v3: R3
+    5000 Series : Broadwell    : die shrink of Haswell (14nm)                           (same)                  Grantley         LGA 2011-v3: R3
+   ----------------------------------------------------------------------------------------------------------------------------------------------
+    6000 Series : Skylake      : new architecture                                       (same)                  Purley           LGA 3647-0: P
+                  Cascade Lake : optim of Skylake, DL Boost, spectre/meltdown           (same)                  Purley           LGA 3647-0: P
+                  Cooper Lake  : optim of Cascade Lake, more cores                      (same)                  Whitley          LGA 4189: P+
+    7000 Series : Kaby Lake    : optim of Skylake, higher clock (14nm+)
+                  Kaby Lake R  : refresh of Kaby Lake named 8000 Series
+    8000 Series : Coffee Lake  : optim of Kaby Lake, 1.5x CPUs/die (14nm++)
+                  Whiskey Lake * optim of Kaby Lake, mobile (U) (14nm++)
+                  Amber Lake   * optim of Kaby Lake, extreme low power (Y)
+                  Palm Cove    : die shrink of Kaby Lake (10nm), AVX-512 (Cannon Lake)
+    9000 Series : Coffee Lake  : refresh of Coffee Lake, spectre/meltdown
+   10000 Series : Comet Lake   * optim of {Coffee, Whiskey} Lake (K,U)
+   ----------------------------------------------------------------------------------------------------------------------------------------------
+   10000 Series : Sunny Cove   : new architecture (Ice Lake) (10nm)                     (same)                  Whitley          LGA 4189: P+
+   11000 Series : Willow Cove  : optim of Sunny Cove (Tiger Lake) (10nm)
+                  Cypress Cove : Willow Cove but with (14nm) (Rocket Lake)
+   ----------------------------------------------------------------------------------------------------------------------------------------------
+   12000 Series : Golden Cove  : new architecture (Alder Lake) (Intel 7)                Sapphire Rapids         Eagle Stream     LGA 4677
+   13000 Series : Raptor Cove  : (Raptor Lake) (Intel 7) (Q3-Q4 22)                     Emerald Rapids (Q1'23)  Eagle Stream     LGA 4677
+ ? 14000 Series : Redwood Cove : shrink of Raptor Cove (Meteor Lake) (Intel 4) (Q2'23)  Granite Rapids          Birch Stream     LGA 4677
+   ----------------------------------------------------------------------------------------------------------------------------------------------  vvv Royal Core ? vvv
+ ? 15000 Series : Lion Cove    : (Arrow Lake (Intel 4)) (Q4'23)              <--???-->  Sierra Forest           Birch Stream     LGA 7529 ?
+ ? 16000 Series : Lion Cove    : shrink (Lunar Lake (Intel 3)) (Q4'24)
+   ----------------------------------------------------------------------------------------------------------------------------------------------
+ ? 17000 Series : Panther Cove : (Nova Lake) (Intel 3) (2025)                <--???-->  Diamond Rapids (2025)   Mountain Stream
+   ----------------------------------------------------------------------------------------------------------------------------------------------
+
+   * = I'm not treating this as a distinct uarch, but just as a core within its
+       parent uarch, Kaby Lake
+
+   UNCERTAINTY: Sometimes Redwood Cove is called Ocean Cove.
+
+   Alder Lake variants: -S desktop, -P = mobile, -M = low-power, -L = atom replacement, -N educational
+
+   Hybrids:
+
+      Lakefield   :       1x Sunny Cove   +     4x Tremont(?)
+      Alder Lake  : {2,6,8}x Golden Cove  + {0,8}x Gracemont
+      Raptor Lake :       8x Raptor Cove  +    16x Gracemont
+    ? Meteor Lake :          Redwood Cove +        Crestmont
+    ? Arrow Lake  :          Lion Cove    +        Skymont
+    ? Lunar Lake  :          Lion Cove    +        Skymont
+    ? Nova Lake   :          Panther Cove +        Darkmont
+
+   "Lines" (suffixes):
+
+      K      = unlocked (overclockable)
+      Mobile = mobile
+      F      = does not include GPU
+      G      = includes GPU
+      H      = high performance GPU
+      T      = power-optimized
+      U      = ultra low power
+      Y      = extremely lower power (even lower than U)
+      S      = special edition (>= 9000) or performance-optimized (<= 4000)
+
+Intel Atom architectures:
+
+                     Mobile phones  Notebooks      Servers       PCs           Embedded/Automotive      Network
+   -------------------------------------------------------------------------------------------------------------
+   2008  Bonnell     Silverthorne   Diamondville
+         Bonnell 2   Lincroft       Pineview                                   Tunnel Creek/Stellarton
+   2011  Saltwell    Medfield       Cedarview      Centerton
+          "          Clover Trail
+   -------------------------------------------------------------------------------------------------------------
+   2013  Silvermont  Merrifield     Bay Trail      Avoton        Bay Trail     Bay Trail                Rangeley
+          "          Moorefield
+          "          SoFIA
+   2015  Airmont                    Cherry Trail                 Braswell
+   -------------------------------------------------------------------------------------------------------------
+   2016  Goldmont                   Willow Trail*  Denverton     Apollo Lake   Apollo Lake
+                                    Apollo Lake
+   2017  Goldmont+                                               Gemini Lake
+   -------------------------------------------------------------------------------------------------------------
+   2020  Tremont                                   Elkhart Lake  Skyhawk Lake/
+                                                                 Jasper Lake
+   -------------------------------------------------------------------------------------------------------------
+         Gracemont
+ ?       Crestmont
+ ?       Skymont
+ ?       Darkmont
+   -------------------------------------------------------------------------------------------------------------
+
+   Mobile phones:
+
+      uArch        Core           Platform        SoC
+      ------------------------------------------------------
+                   Stealey        McCaslin
+      Bonnell      Silverthorne   Menlow
+      Bonnell 2    Lincroft       Moorestown
+      Saltwell     Medfield       Medfield        Penwell
+      Saltwell     Medfield       Medfield        Lexington
+      Saltwell     Clover Trail   Clover Trail+   Cloverview
+      ------------------------------------------------------
+      Silvermont   Merrifield     Merrifield      Tangier
+      Silvermont   Moorefield     Moorefield      Anniedale
+      ------------------------------------------------------
+      Goldmont     Apollo Lake    Morganfield     Broxton
+      ------------------------------------------------------
+
+   Tablets:
+
+      uArch        Core           Platform       SoC
+      -----------------------------------------------------
+      Bonnell      Diamondville
+      Bonnell 2    Pineview       Pine Trail-M
+      Bonnell 2    Lincroft !     Oak Trail
+      Saltwell     Cedarview      Cedar Trail
+      ------------------------------------------------------
+      Silvermont   Bay Trail-T    Bay Trail      Valleyview
+      Airmont      Cherry Trail   Cherry Trail   Cherryview
+      ------------------------------------------------------
+      Goldmont     Willow Trail*  Willow Trail   Broxton
+      -----------------------------------------------------
+
+   Server:
+
+      uArch        Core           Platform       SoC
+      -----------------------------------------------------
+      Saltwell     Centerton      Bordenville    Centerton
+      Saltwell     ?              ?              Briarwood
+      ------------------------------------------------------
+      Silvermont   Avoton         ?              Avoton
+      -----------------------------------------------------
+      Tremont      Elkhart Lake   Jacobsville
+      -----------------------------------------------------
+
+   PCs:
+
+      uArch        Core           Platform       SoC
+      -----------------------------------------------------
+      Airmont      Braswell       ?              Braswell
+      -----------------------------------------------------
+
+   Embedded:
+
+      uArch        Core           Platform       SoC
+      -----------------------------------------------------
+      Bonnell 2    Tunnel Creek   Queens Bay
+      -----------------------------------------------------
+
+   Network:
+
+      uArch        Core           Platform       SoC
+      -----------------------------------------------------
+      Silvermont   Rangeley       ?              Rangeley
+      -----------------------------------------------------
+      Tremont      ?              ?              Snow Ridge
+      -----------------------------------------------------
+
+   * Canceled core
+   ! Surprising use of wrong-market core
+
+Intel Phi (brand name) / MIC (architecture name):
+
+   (research)      : Larrabee (derived from P54C)
+   Knights Ferry   : 24 Aubrey Isle {K1OM}, derived from Larrabee cores
+   Knights Corner  : 50 (Aubrey Isle-derived) {K1OM} cores
+   Knights Landing : 72 Airmont cores
+   Knights Hill    : (canceled; would've shrunk Knights Landing to 10nm)
+   Knights Mill    : 72 Airmont(?) cores
+
+Intel AI:
+
+   Spring Hill : 2x Sunny Cove (derived) cores + 12 ICE (Vision P6 DSP)
+
+======================================================================================================================================
+
+AMD K8-based Platforms (includes K10 & its derivatives):
+
+   Mobile Platform  Athlon          m-Athlon           Sempron  m-Sempron    Turion
+   --------------------------------------------------------------------------------------------
+   Initial (CG)     NewCastle       Clawhammer/Odessa  Paris    Dublin
+   Initial (D0)     Winchester      Oakville           Palermo  Sonora
+   Initial (E3)     Venice                             Palermo  Palermo
+   Initial (E4)     San Diego
+   Initial (E5)                     Newark                                   Lancaster/Richmond
+   Initial (E6)     Venice                             Palermo  Albany/Roma
+   Kite (F2)        Orleans                            Manila   Keene        Taylor/Trinidad
+   Kite R (G1)      Brisbane                           Sparta   Sherman      Tyler
+   Puma             Lion                               Sable                 Lion
+   Yukon            Huron/Brisbane                                           Huron
+   Congo
+   Tigris/Danube    Sargas/Regor                                Sargas       Caspian/Champlain
+   Nile                                                                      Geneva
+   --------------------------------------------------------------------------------------------
+
+AMD Bobcat and later:
+
+
+                Desktop                     Desktop Enthusiast  Mobile                          Server                      Embedded
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   Bobcat                                                       Ontario/Desna/Zacate                                        Ontario/Zacate
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   Bulldozer    Zambezi                                                                         Interlagos/Valencia/Zurich
+   Piledriver   Trinity                                         Trinity                                                     Trinity
+    (update)    Richland                                        Richland
+   Steamroller  Kaveri                                          Kaveri                                                      Bald Eagle
+    (refresh)   Godavari
+   Excavator    Carrizo                                         Carrizo                         Toronto                     Brown Falcon/Merlin Falcon
+    (+)         Bristol Ridge/Stoney Ridge                      Bristol Ridge/Stoney Ridge                                  Prairie Falcon
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   Jaguar       Kabini                                          Kabini/Temash                   Kyoto                       Kabini
+   Puma (2014)                                                  Beema/Mullins                                               Steppe Eagle (SoC)/Crowned Eagle (CPU)
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   Zen (14nm)   1000: Summit Ridge          1000: Whitehaven    2000: Raven Ridge               1st Gen: Naples/Snowy Owl   V1000: Great Horned Owl/R1000: Banded Kestrel
+                1000: Dali                                      1000: Dali
+   Zen+ (12nm)  2000: Pinnacle Ridge        2000: Colfax
+                3000: Picasso                                   3000: Picasso
+   Zen 2 (7nm)                              3000: Castle Peak                                   2nd Gen: Rome               V2000: Grey Hawk
+    (update)    3000: Matisse                                   4000: Renoir
+                                                                5000: Lucienne
+    (?)                                                         Van Gogh/Mero
+    (?)                                                         Dragon Crest (?)
+    (?)                                                         Mendocino (?)
+   Zen 3 (7nm)  5000: Vermeer               5000: Chagall (?)   5000: Cezanne                   3rd Gen: Milan
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                Warhol                                          Rembrandt/Barcelo               Trento/Badami (?)
+                                                                Monet (12nm) (?)
+   Zen 4 (5nm)  Raphael                     Storm Peak (?)      Phoenix                         Genoa(standard)
+   Zen 4c (5nm)                                                                                 Bergamo(cloud)
+   Zen 5        Granite Ridge                                                                   Turin (>= late 2023)
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+   Bobcat-Puma(2014):
+      A-Series = APU (Desktop/Mobile)
+      E-Series = cheaper version of A-Series
+      G-Series = Embedded
+   Zen-based:
+      Ryzen              = Desktop/Mobile
+      Ryzen Threadripper = Desktop Enthusiast
+      EPYC               = Server
+
+      Suffixes:
+         (none) = ordinary desktop
+         G      = includes GPU
+         X      = high performance
+         H      = high performance (big laptops)
+         U      = ultra low power (thin laptops)
+         T      = turbo clock speeds (often combined with X)
+
+======================================================================================================================================
+
+Zhaoxin (VIA + Shanghai Municipal Government), began ~2013:
+   1st gen: ZhangJiang  (incl. KaiXian (desktop), Kaisheng (server))
+   2nd gen: WuDaoKou
+   3rd gen: LuJiaZui    (e.g. KX-U6880)
+
+======================================================================================================================================
+
+Hygon (AMD + THATIC (AMD + various Chinese companies)), began ~2016:
+   Dhyana
+
+(probably dead because of US Entity List export restrictions)
+
+======================================================================================================================================
+
+Intel + Montage + Tsinghua University, began ~2016:
+   Jintide 1st Gen (X____  series) : Intel Skylake Xeon + Tsinghua University RCP
+   Jintide 2nd Gen (C____R series)
+   Jintide 3rd Gen (C____  series)
