@@ -13,6 +13,7 @@ set(CMAKE_C_FLAGS
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
 
 add_library(cpuid SHARED cpuid.c)
+target_include_directories(cpuid PUBLIC .)
 
 add_executable(main main.cpp)
 target_link_libraries(main cpuid)
